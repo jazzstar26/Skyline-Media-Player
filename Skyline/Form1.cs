@@ -92,9 +92,10 @@ namespace Skyline
         {
 
         }
-    }
 
-    internal class Opendictory : Form
-    {
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
