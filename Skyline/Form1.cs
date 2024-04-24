@@ -8,7 +8,7 @@ namespace Skyline
         {
             InitializeComponent();
         }
-        //File Open New test
+        //File Open
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var fileContent = string.Empty;
