@@ -28,25 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             openToolStripMenuItem = new ToolStripMenuItem();
+            openDirectoryToolStripMenuItem = new ToolStripMenuItem();
             closeToolStripMenuItem = new ToolStripMenuItem();
-            closeToolStripMenuItem1 = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
             viewToolStripMenuItem = new ToolStripMenuItem();
             aspectRatioToolStripMenuItem = new ToolStripMenuItem();
             playToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            checkForSoftwareUpdatesToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
-            soToolStripMenuItem = new ToolStripMenuItem();
-            aboutToolStripMenuItem1 = new ToolStripMenuItem();
+            axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, viewToolStripMenuItem, playToolStripMenuItem, aboutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, viewToolStripMenuItem, playToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
@@ -56,7 +59,7 @@
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem, closeToolStripMenuItem, closeToolStripMenuItem1, exitToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem, openDirectoryToolStripMenuItem, closeToolStripMenuItem, exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
@@ -70,19 +73,19 @@
             openToolStripMenuItem.Text = "Open (CTRL+O)";
             openToolStripMenuItem.Click += openToolStripMenuItem_Click;
             // 
+            // openDirectoryToolStripMenuItem
+            // 
+            openDirectoryToolStripMenuItem.Name = "openDirectoryToolStripMenuItem";
+            openDirectoryToolStripMenuItem.Size = new Size(201, 22);
+            openDirectoryToolStripMenuItem.Text = "Open Directory";
+            openDirectoryToolStripMenuItem.Click += openDirectoryToolStripMenuItem_Click;
+            // 
             // closeToolStripMenuItem
             // 
             closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             closeToolStripMenuItem.Size = new Size(201, 22);
-            closeToolStripMenuItem.Text = "Open Directory";
+            closeToolStripMenuItem.Text = "Close";
             closeToolStripMenuItem.Click += closeToolStripMenuItem_Click;
-            // 
-            // closeToolStripMenuItem1
-            // 
-            closeToolStripMenuItem1.Name = "closeToolStripMenuItem1";
-            closeToolStripMenuItem1.Size = new Size(201, 22);
-            closeToolStripMenuItem1.Text = "Close";
-            closeToolStripMenuItem1.Click += closeToolStripMenuItem1_Click;
             // 
             // exitToolStripMenuItem
             // 
@@ -112,35 +115,46 @@
             playToolStripMenuItem.Size = new Size(41, 20);
             playToolStripMenuItem.Text = "Play";
             // 
+            // helpToolStripMenuItem
+            // 
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { checkForSoftwareUpdatesToolStripMenuItem, aboutToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(44, 20);
+            helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
+            // 
+            // checkForSoftwareUpdatesToolStripMenuItem
+            // 
+            checkForSoftwareUpdatesToolStripMenuItem.Name = "checkForSoftwareUpdatesToolStripMenuItem";
+            checkForSoftwareUpdatesToolStripMenuItem.Size = new Size(222, 22);
+            checkForSoftwareUpdatesToolStripMenuItem.Text = "Check For Software Updates";
+            checkForSoftwareUpdatesToolStripMenuItem.Click += checkForSoftwareUpdatesToolStripMenuItem_Click;
+            // 
             // aboutToolStripMenuItem
             // 
-            aboutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { soToolStripMenuItem, aboutToolStripMenuItem1 });
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(44, 20);
-            aboutToolStripMenuItem.Text = "Help";
-            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
+            aboutToolStripMenuItem.Size = new Size(222, 22);
+            aboutToolStripMenuItem.Text = "About";
+            aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click_1;
             // 
-            // soToolStripMenuItem
+            // axWindowsMediaPlayer1
             // 
-            soToolStripMenuItem.Name = "soToolStripMenuItem";
-            soToolStripMenuItem.Size = new Size(217, 22);
-            soToolStripMenuItem.Text = "Check For Software Update";
-            soToolStripMenuItem.Click += soToolStripMenuItem_Click;
-            // 
-            // aboutToolStripMenuItem1
-            // 
-            aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            aboutToolStripMenuItem1.Size = new Size(217, 22);
-            aboutToolStripMenuItem1.Text = "About";
-            aboutToolStripMenuItem1.Click += aboutToolStripMenuItem1_Click;
+            axWindowsMediaPlayer1.Enabled = true;
+            axWindowsMediaPlayer1.Location = new Point(0, 27);
+            axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            axWindowsMediaPlayer1.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
+            axWindowsMediaPlayer1.Size = new Size(1158, 644);
+            axWindowsMediaPlayer1.TabIndex = 1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = SystemColors.ControlDark;
             ClientSize = new Size(1158, 670);
+            Controls.Add(axWindowsMediaPlayer1);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
@@ -148,6 +162,7 @@
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -157,14 +172,15 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem openDirectoryToolStripMenuItem;
         private ToolStripMenuItem closeToolStripMenuItem;
         private ToolStripMenuItem viewToolStripMenuItem;
-        private ToolStripMenuItem closeToolStripMenuItem1;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem playToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem;
-        private ToolStripMenuItem soToolStripMenuItem;
-        private ToolStripMenuItem aboutToolStripMenuItem1;
+        private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem aspectRatioToolStripMenuItem;
+        private ToolStripMenuItem checkForSoftwareUpdatesToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

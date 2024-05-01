@@ -1,9 +1,12 @@
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Skyline
 {
     public partial class Form1 : Form
     {
+        private object txtdirectory;
+
         public Form1()
         {
             InitializeComponent();
@@ -17,8 +20,8 @@ namespace Skyline
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "MKV files (*.mkv)|*.mkv|All files (*.*)|*.*|AVI Files (*.avi)|*.avi|MP4 Files (*.mp4)|*.mp4||";
-                openFileDialog.FilterIndex = 2;
+                openFileDialog.Filter = "All files (*.*)|*.*|MKV Files (*.mkv)|*.mkv|AVI Files (*.avi)|*.avi|MP4 Files (*.mp4)|*.mp4||";
+                openFileDialog.FilterIndex = 1;
                 openFileDialog.RestoreDirectory = true;
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -35,15 +38,19 @@ namespace Skyline
                     }
                 }
             }
-
         }
-        //Open Directory
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+        //Open Directory
+        private void openDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folder = new FolderBrowserDialog();
+            DialogResult result = folder.ShowDialog();
+        }
         //Close
-        private void button1_Click(object sender, EventArgs e)
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -53,17 +60,8 @@ namespace Skyline
             Application.Exit();
         }
 
-        private void closeToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-        //About
-        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        //Help
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
@@ -88,7 +86,14 @@ namespace Skyline
 
         }
         //Check For Software Updates
-        private void soToolStripMenuItem_Click(object sender, EventArgs e)
+        private void checkForSoftwareUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Skyline Media Player");
+        }
+    }
+}
